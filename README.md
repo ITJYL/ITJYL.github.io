@@ -41,3 +41,9 @@ This work is published under [MIT][mit] License.
 [chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
 [CD]: https://en.wikipedia.org/wiki/Continuous_deployment
 [mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+
+## 실행 및 편집 시 방법
+
+터미널
+$ cd /Users/jiyeonlee/Documents/githubPages/ITJYL.github.io
+$ bundle exec jekyll s
