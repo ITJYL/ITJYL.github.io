@@ -2,6 +2,8 @@
 title: "02. 시스템 아키텍처"
 date: 2026-02-28
 categories: [Ruxpress Project]
+subcategory: 기획
+order: 2
 tags: [아키텍처, AWS, Spring Boot, React]
 ---
 

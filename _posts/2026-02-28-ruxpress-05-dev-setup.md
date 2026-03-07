@@ -2,6 +2,8 @@
 title: "05. 개발 환경 세팅"
 date: 2026-02-28
 categories: [Ruxpress Project]
+subcategory: 기획
+order: 5
 tags: [개발환경, 로컬, Docker, Spring Boot, React]
 ---
 

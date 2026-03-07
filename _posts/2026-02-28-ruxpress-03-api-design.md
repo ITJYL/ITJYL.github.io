@@ -2,6 +2,8 @@
 title: "03. API 설계"
 date: 2026-02-28
 categories: [Ruxpress Project]
+subcategory: 기획
+order: 3
 tags: [API, REST, Spring Boot]
 ---
 

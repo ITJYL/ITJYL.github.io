@@ -2,6 +2,8 @@
 title: "01. 기능 명세 (MVP)"
 date: 2026-02-28
 categories: [Ruxpress Project]
+subcategory: 기획
+order: 1
 tags: [MVP, 요구사항, 기능명세]
 ---
 

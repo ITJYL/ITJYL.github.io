@@ -2,6 +2,8 @@
 title: "04. DB 설계"
 date: 2026-02-28
 categories: [Ruxpress Project]
+subcategory: 기획
+order: 4
 tags: [DB, Maria DB, ERD, 스키마]
 ---
 
