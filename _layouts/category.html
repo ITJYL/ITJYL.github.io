@@ -1,6 +1,5 @@
 ---
 layout: page
-# Category layout: Ruxpress Project만 세부 카테고리(기획·설계 / 구현)로 그룹 표시
 ---
 
 {% include lang.html %}
@@ -12,57 +11,14 @@ layout: page
     <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
   </h1>
 
-  {% if page.title == "Ruxpress Project" %}
-    {% comment %} 세부 카테고리: 기획·설계 / 구현 (post.subcategory 기준) {% endcomment %}
-    {% assign grouped = page.posts | group_by: "subcategory" %}
-    {% assign sub_order = "기획|구현" | split: "|" %}
-    {% assign sub_labels = "기획|기획·설계,구현|구현" | split: "," %}
-    {% for sub_key in sub_order %}
-      {% assign sub_label = "기획·설계" %}
-      {% if sub_key == "구현" %}{% assign sub_label = "구현" %}{% endif %}
-      {% for group in grouped %}
-        {% if group.name == sub_key %}
-          {% if group.items.size > 0 %}
-  <h2 class="ps-lg-2 pt-4 lead">{{ sub_label }}</h2>
   <ul class="content ps-0">
-            {% assign sorted = group.items | sort: "order" %}
-            {% for post in sorted %}
-    <li class="d-flex justify-content-between px-md-3">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="dash flex-grow-1"></span>
-      {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
-    </li>
-            {% endfor %}
-  </ul>
-          {% endif %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
+    {% assign sorted = page.posts | sort: "order" %}
+    {% for post in sorted %}
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="dash flex-grow-1"></span>
+        {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+      </li>
     {% endfor %}
-    {% comment %} subcategory 없거나 기타 값인 글 (order 기준 정렬) {% endcomment %}
-    {% assign others = page.posts | where_exp: "item", "item.subcategory != '기획' and item.subcategory != '구현'" %}
-    {% assign others_sorted = others | sort: "order" %}
-    {% if others_sorted.size > 0 %}
-  <h2 class="ps-lg-2 pt-4 lead">기타</h2>
-  <ul class="content ps-0">
-      {% for post in others_sorted %}
-    <li class="d-flex justify-content-between px-md-3">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="dash flex-grow-1"></span>
-      {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
-    </li>
-      {% endfor %}
   </ul>
-    {% endif %}
-  {% else %}
-    <ul class="content ps-0">
-      {% for post in page.posts %}
-        <li class="d-flex justify-content-between px-md-3">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <span class="dash flex-grow-1"></span>
-          {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
 </div>

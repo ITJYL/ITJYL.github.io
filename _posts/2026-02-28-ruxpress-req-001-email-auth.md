@@ -1,8 +1,7 @@
 ---
 title: "REQ-001 회원 관리 (이메일 인증) 구현 정리"
 date: 2026-02-28
-categories: [Ruxpress Project]
-subcategory: 구현
+categories: [Ruxpress Project, REQ-001 사용자 인증]
 order: 0
 tags: [Spring Boot, React, 회원가입, 로그인, 이메일 인증, JWT]
 ---
